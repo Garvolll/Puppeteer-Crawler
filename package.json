@@ -1,0 +1,21 @@
+{
+  "name": "money",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "phantomjs": "node_modules/.bin/phantomjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "phantomjs": "^2.1.7+deprecated"
+  },
+  "dependencies": {
+    "moment": "^2.22.1",
+    "mysql": "^2.15.0",
+    "node-schedule": "^1.3.0",
+    "puppeteer": "^1.3.0"
+  }
+}
