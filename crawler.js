@@ -52,7 +52,6 @@ async function handler(url, index) {
             return trList.length
         });
         count += curCount
-        console.log("curCount:" + curCount + "count:" + count)
         next = await page.$x('//*[@id="J-ajax-main"]/div[2]/a[contains(text(), "下一页")]')
         if (next.length > 0) {
             await next[0].click()
@@ -61,9 +60,7 @@ async function handler(url, index) {
     }
     let dateText = await page.$eval("#datacenter_change_content > div:nth-child(3) > div > span", el => el.innerText);
     dateText = dateText.slice(dateText.length - 10, dateText.length)
-    console.log(dateText)
     let p = moment(dateText).format('YYYY-MM-DD');
 
     connection.query(`INSERT INTO gd_count(date,count,data_type)values(?,?,?)`, [p, count, index], function () {})
-    console.log("final count:" + count)
 }
